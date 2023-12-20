@@ -34,7 +34,7 @@ python manage.py collectstatic --noinput
 echo "DONE! :)"
 
 # Configure supervisor
-cp $PROJECT_BASE_PATH/deploy/supervisor_healthapp.conf /etc/supervisor/conf.d/healthapp.conf
+cp $PROJECT_BASE_PATH/deploy/supervisor_app.conf /etc/supervisor/conf.d/app.conf
 supervisorctl reread
 supervisorctl update
 supervisorctl restart healthapp
