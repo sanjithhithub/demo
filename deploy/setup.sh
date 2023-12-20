@@ -37,14 +37,14 @@ echo "DONE! :)"
 cp $PROJECT_BASE_PATH/deploy/supervisor_app.conf /etc/supervisor/conf.d/app.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart healthapp
+supervisorctl restart app
 
 echo "DONE! :)"
 
 # Configure nginx
-cp $PROJECT_BASE_PATH/deploy/nginx_healthapp.conf /etc/nginx/sites-available/healthapp.conf
+cp $PROJECT_BASE_PATH/deploy/nginx_app.conf /etc/nginx/sites-available/app.conf
 # rm /etc/nginx/sites-enabled/default || true
-ln -s /etc/nginx/sites-available/healthapp.conf /etc/nginx/sites-enabled/healthapp.conf
+ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/app.conf
 systemctl restart nginx.service
 
 echo "DONE! :)"
