@@ -24,6 +24,7 @@ source "$PROJECT_BASE_PATH/env/bin/activate"
 # Install python packages
 pip install -r "$PROJECT_BASE_PATH/requirements.txt"
 pip install uwsgi==2.0.21
+echo "DONE! :)"
 
 # Run migrations and collectstatic
 cd "$PROJECT_BASE_PATH"
