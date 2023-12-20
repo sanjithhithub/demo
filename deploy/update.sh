@@ -2,7 +2,7 @@
 
 set -e
 
-PROJECT_BASE_PATH='/usr/local/apps/'venv
+PROJECT_BASE_PATH='/usr/local/apps/venv'
 
 git pull
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
