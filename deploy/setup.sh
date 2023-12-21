@@ -43,7 +43,7 @@ echo "DONE! :)"
 
 # Configure nginx
 cp $PROJECT_BASE_PATH/deploy/nginx_healthapp.conf /etc/nginx/sites-available/healthapp.conf
-rm /etc/nginx/sites-enabled/default || true
+#rm /etc/nginx/sites-enabled/default || true
 ln -s /etc/nginx/sites-available/healthapp.conf /etc/nginx/sites-enabled/healthapp.conf
 systemctl restart nginx.service
 
