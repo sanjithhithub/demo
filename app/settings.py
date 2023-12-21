@@ -27,10 +27,7 @@ SECRET_KEY = 'django-insecure-jf1b*5t8!ufn96eh4yrkb%c8+e)t(7-%61k@q-94*dlk5zzm*s
 DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 
 
-ALLOWED_HOSTS = [
-    'ec2-13-51-177-203.eu-north-1.compute.amazonaws.com',
-    '127.0.01',
-]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -42,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      'healthapp',
+     'rest_framework',
     
 ]
 
