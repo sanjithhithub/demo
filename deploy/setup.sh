@@ -34,17 +34,17 @@ python manage.py collectstatic --noinput
 echo "DONE! :)"
 
 # Configure supervisor
-cp $PROJECT_BASE_PATH/deploy/supervisor_app.conf /etc/supervisor/conf.d/app.conf
+cp $PROJECT_BASE_PATH/deploy/supervisor_healthapp.conf /etc/supervisor/conf.d/healthapp.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart app
+supervisorctl restart healthapp
 
 echo "DONE! :)"
 
 # Configure nginx
-cp $PROJECT_BASE_PATH/deploy/nginx_app.conf /etc/nginx/sites-available/app.conf
-# rm /etc/nginx/sites-enabled/default || true
-ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/app.conf
+cp $PROJECT_BASE_PATH/deploy/nginx_healthapp.conf /etc/nginx/sites-available/healthapp.conf
+rm /etc/nginx/sites-enabled/default || true
+ln -s /etc/nginx/sites-available/healthapp.conf /etc/nginx/sites-enabled/healthapp.conf
 systemctl restart nginx.service
 
 echo "DONE! :)"
